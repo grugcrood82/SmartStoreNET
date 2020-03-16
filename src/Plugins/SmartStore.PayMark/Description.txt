@@ -1,0 +1,10 @@
+﻿FriendlyName: PayMark
+Description: Provides the PayMark payment methods PayMark Standard, PayMark Direct, PayMark Express and PayMark PLUS.
+SystemName: SmartStore.PayMark
+Group: Payment
+Version: 3.2.2
+MinAppVersion: 3.2.2
+DisplayOrder: 1
+FileName: SmartStore.PayMark.dll
+ResourceRootKey: Plugins.SmartStore.PayMark
+Url: http://community.smartstore.com/marketplace/file/29-PayMark-payment-plugins/
