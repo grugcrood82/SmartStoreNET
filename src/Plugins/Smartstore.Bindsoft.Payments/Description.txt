@@ -1,9 +1,0 @@
-FriendlyName: Bindsoft Payment Plugin
-SystemName: BindsoftPay.PlugIn
-Group: Payments
-Version: 1.00
-MinAppVersion: 2.1.1
-Author: Innocent Bindura
-DisplayOrder: 1
-FileName: Smartstore.Bindsoft.Payments.MyPlugin.dll
-ResourceRootKey: Plugins.Bindsoft.Payments.MyPlugin
