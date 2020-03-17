@@ -8,19 +8,6 @@ namespace SmartStore.PayMark
     {
         public void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute("SmartStore.PayMarkExpress",
-                "Plugins/SmartStore.PayMark/{controller}/{action}",
-                new { controller = "PayMarkExpress", action = "Index" },
-                new[] { "SmartStore.PayMark.Controllers" }
-            )
-            .DataTokens["area"] = "SmartStore.PayMark";
-
-            routes.MapRoute("SmartStore.PayMarkDirect",
-                "Plugins/SmartStore.PayMark/{controller}/{action}",
-                new { controller = "PayMarkDirect", action = "Index" },
-                new[] { "SmartStore.PayMark.Controllers" }
-            )
-            .DataTokens["area"] = "SmartStore.PayMark";
 
             routes.MapRoute("SmartStore.PayMarkStandard",
                 "Plugins/SmartStore.PayMark/{controller}/{action}",
@@ -29,16 +16,7 @@ namespace SmartStore.PayMark
             )
             .DataTokens["area"] = "SmartStore.PayMark";
 
-			routes.MapRoute("SmartStore.PayMarkPlus",
-				"Plugins/SmartStore.PayMark/{controller}/{action}",
-				new { controller = "PayMarkPlus", action = "Index" },
-				new[] { "SmartStore.PayMark.Controllers" }
-			)
-			.DataTokens["area"] = Plugin.SystemName;
-
-
-
-			//Legacay Routes
+            //Legacay Routes
 			routes.MapRoute("SmartStore.PayMarkExpress.IPN",
                  "Plugins/PaymentPayMarkExpress/IPNHandler",
                  new { controller = "PayMarkExpress", action = "IPNHandler" },

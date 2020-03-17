@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using SmartStore.Core.Domain.Payments;
 using SmartStore.Core.Logging;
 using SmartStore.PayMark.Models;
@@ -96,16 +97,13 @@ namespace SmartStore.PayMark.Controllers
 			var transactionid = form.GetValue("TransactionId").AttemptedValue;
 			
 			TransactionResult values;
-				var tx = Services.WebHelper.QueryString<string>("tx");
-			var utcNow = DateTime.UtcNow;
 			var orderNumberGuid = Guid.Empty;
 			var orderNumber = string.Empty;
 			var total = decimal.Zero;
 			string response;
 
 			var provider = PaymentService.LoadPaymentMethodBySystemName(PayMarkStandardProvider.SystemName, true);
-            var processor = provider != null ? provider.Value as PayMarkStandardProvider : null;
-			if (processor == null)
+			if (!(provider?.Value is PayMarkStandardProvider processor))
 			{
 				Logger.Warn(null, T("Plugins.Payments.PayMark.NoModuleLoading", "PDTHandler"));
 				return RedirectToAction("Completed", "Checkout", new { area = "" });
@@ -180,7 +178,8 @@ namespace SmartStore.PayMark.Controllers
 				// ignored
 			}
 
-			return RedirectToAction("Index", "Home", new { area = "" });
+			var fpm = JsonConvert.DeserializeObject<FailedPaymentModel>(response);
+			return RedirectToAction("FailedPayment","PayMarkStandard",fpm);
 		}
 
 		public ActionResult CancelOrder(FormCollection form)
@@ -195,5 +194,41 @@ namespace SmartStore.PayMark.Controllers
 
 			return RedirectToAction("Index", "Home", new { area = "" });
 		}
+
+		public ActionResult FailedPayment(FailedPaymentModel fpm)
+		{
+			return View("PaymentFailed", fpm);
+		}
+	}
+	
+	public class FailedPaymentModel
+	{
+		public string transactionId { get; set; }
+		public object originalTransactionId { get; set; }
+		public string type { get; set; }
+		public int accountId { get; set; }
+		public string status { get; set; }
+		public DateTime transactionDate { get; set; }
+		public string batchNumber { get; set; }
+		public int receiptNumber { get; set; }
+		public string authCode { get; set; }
+		public double amount { get; set; }
+		public double surcharge { get; set; }
+		public string reference { get; set; }
+		public string particular { get; set; }
+		public string cardType { get; set; }
+		public string cardNumber { get; set; }
+		public string cardExpiry { get; set; }
+		public string cardHolder { get; set; }
+		public bool cardStored { get; set; }
+		public object cardToken { get; set; }
+		public string errorCode { get; set; }
+		public string errorMessage { get; set; }
+		public string acquirerResponseCode { get; set; }
+		public object tokenReference { get; set; }
+		public string merchantToken { get; set; }
+		public object payerId { get; set; }
+		public object payerIdType { get; set; }
+		public object bank { get; set; }
 	}
 }

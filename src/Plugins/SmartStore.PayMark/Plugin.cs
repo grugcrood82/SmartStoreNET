@@ -38,12 +38,7 @@ namespace SmartStore.PayMark
 
 		public override void Install()
 		{
-            _services.Settings.SaveSetting(new PayMarkExpressPaymentSettings());
-            _services.Settings.SaveSetting(new PayMarkDirectPaymentSettings());
             _services.Settings.SaveSetting(new PayMarkStandardPaymentSettings());
-            _services.Settings.SaveSetting(new PayMarkPlusPaymentSettings());
-            _services.Settings.SaveSetting(new PayMarkInstalmentsSettings());
-
             _services.Localization.ImportPluginResourcesFromXml(this.PluginDescriptor);
 
 			base.Install();

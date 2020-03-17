@@ -1,0 +1,57 @@
+﻿@model SmartStore.PayMark.Controllers.FailedPaymentModel 
+@{
+    Layout = "_Layout";
+    Html.AddBodyCssClass("myaccount-page");
+}
+<style>
+    .trx-f{
+    padding: 2rem;
+    color: #f49a1f;
+    font-size: larger;
+    }
+    .trx-f i {
+    float: right;
+    padding-right: 3px;
+    }
+    .jumbotron{
+    background-color: transparent!important;
+    }
+</style>
+<div class="page page-myaccount page-myaccount-@ViewBag.PageClassToken">
+    <div class="page-body">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 d-print-none">
+                @{ Html.RenderWidget("myaccount_menu_before"); }
+
+                @{ Html.SmartStore().Menu().Name("MyAccount").Template("ListGroup").Render(); }
+
+                @{ Html.RenderWidget("myaccount_menu_after"); }
+
+                @{ Html.RenderAction("PollBlock", "Poll", new { systemKeyword = "MyAccountMenu", area = "" }); }
+            </div>
+            <div class="col-md-8 col-lg-9">
+                <div class="page-title pt-4 pt-md-0">
+                    <h1 class="h3">@ViewBag.PageTitle</h1>
+                </div>
+                <div class="jumbotron">
+                    <h1 class="display-4">@Model.errorMessage <i class="fa fa-exclamation-triangle danger"></i></h1>
+                    <p class="lead">Your <strong>@Model.type</strong> transactions has unfortunately failed. Please contact your bank with the information below to resolve the issue.</p>
+                    <hr class="my-4">
+                    <ul class="list-group trx-f">
+                        <li class="list-group-item"><i class="fa fa-fingerprint"></i>Transaction Id  : @Model.transactionId</li>
+                        <li class="list-group-item"><i class="fa fa-thumbs-down"></i>Status: @Model.status</li>
+                        <li class="list-group-item"><i class="fa fa-calendar-day"></i>Date @Model.transactionDate.ToString("f")</li>
+                        <li class="list-group-item"><i class="fa fa-briefcase"></i>Batch: @Model.batchNumber</li>
+                        <li class="list-group-item"><i class="fa fa-receipt"></i>Receipt No.: @Model.receiptNumber</li>
+                        <li class="list-group-item"><i class="fa fa-file-invoice-dollar"></i>Partucular: Order number: @Model.particular</li>
+                        <li class="list-group-item"><i class="fa fa-credit-card"></i>Card Number: @Model.cardNumber</li>
+                        <li class="list-group-item"><i class="fa fa-user"></i>Card Holder: @Model.cardHolder</li>
+                    </ul>
+                    <p class="lead">
+                        @Html.ActionLink("Back To Shop", "Index", "Home", new {Area=""}, new {@class="btn btn-primary btn-lg"})
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
