@@ -2715,6 +2715,7 @@
           <e p="Views" t="Include">
             <e p="PayMarkStandard" t="Include">
               <e p="Configure.cshtml" t="Include" />
+              <e p="PaymentFailed.cshtml" t="Include" />
               <e p="PaymentInfo.cshtml" t="Include" />
             </e>
             <e p="Shared" t="Include">
