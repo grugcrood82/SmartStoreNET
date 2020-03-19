@@ -2693,7 +2693,6 @@
             <e p="KeyValueAccumulator.cs" t="Include" />
             <e p="PayMarkItemType.cs" t="Include" />
             <e p="PayMarkLineItem.cs" t="Include" />
-            <e p="PayMarkProviderBase.cs" t="Include" />
             <e p="PayMarkRestApiProviderBase.cs" t="Include" />
             <e p="PayMarkStandardProvider.cs" t="Include" />
             <e p="PaymentRequestParams.cs" t="Include" />
@@ -2724,73 +2723,6 @@
               </e>
             </e>
             <e p="Web.config" t="Include" />
-          </e>
-          <e p="Web References" t="Include">
-            <e p="PayMarkSvc" t="Include">
-              <e p="AddressVerifyResponseType1.datasource" t="Include" />
-              <e p="BAUpdateResponseType1.datasource" t="Include" />
-              <e p="BillOutstandingAmountResponseType1.datasource" t="Include" />
-              <e p="BillUserResponseType1.datasource" t="Include" />
-              <e p="BMButtonSearchResponseType1.datasource" t="Include" />
-              <e p="BMCreateButtonResponseType1.datasource" t="Include" />
-              <e p="BMGetButtonDetailsResponseType1.datasource" t="Include" />
-              <e p="BMGetInventoryResponseType1.datasource" t="Include" />
-              <e p="BMManageButtonStatusResponseType1.datasource" t="Include" />
-              <e p="BMSetInventoryResponseType1.datasource" t="Include" />
-              <e p="BMUpdateButtonResponseType1.datasource" t="Include" />
-              <e p="CancelRecoupResponseType1.datasource" t="Include" />
-              <e p="CompleteRecoupResponseType1.datasource" t="Include" />
-              <e p="CoreComponentTypes.xsd" t="Include" />
-              <e p="CreateBillingAgreementResponseType1.datasource" t="Include" />
-              <e p="CreateMobilePaymentResponseType1.datasource" t="Include" />
-              <e p="CreateRecurringPaymentsProfileResponseType1.datasource" t="Include" />
-              <e p="DoAuthorizationResponseType1.datasource" t="Include" />
-              <e p="DoCancelResponseType1.datasource" t="Include" />
-              <e p="DoCaptureResponseType1.datasource" t="Include" />
-              <e p="DoDirectPaymentResponseType1.datasource" t="Include" />
-              <e p="DoExpressCheckoutPaymentResponseType1.datasource" t="Include" />
-              <e p="DoMobileCheckoutPaymentResponseType1.datasource" t="Include" />
-              <e p="DoNonReferencedCreditResponseType1.datasource" t="Include" />
-              <e p="DoReauthorizationResponseType1.datasource" t="Include" />
-              <e p="DoReferenceTransactionResponseType1.datasource" t="Include" />
-              <e p="DoUATPAuthorizationResponseType1.datasource" t="Include" />
-              <e p="DoUATPExpressCheckoutPaymentResponseType1.datasource" t="Include" />
-              <e p="DoVoidResponseType1.datasource" t="Include" />
-              <e p="eBLBaseComponents.xsd" t="Include" />
-              <e p="EnhancedDataTypes.xsd" t="Include" />
-              <e p="EnterBoardingResponseType1.datasource" t="Include" />
-              <e p="ExecuteCheckoutOperationsResponseType1.datasource" t="Include" />
-              <e p="ExternalRememberMeOptOutResponseType1.datasource" t="Include" />
-              <e p="GetAccessPermissionDetailsResponseType1.datasource" t="Include" />
-              <e p="GetAuthDetailsResponseType1.datasource" t="Include" />
-              <e p="GetBalanceResponseType1.datasource" t="Include" />
-              <e p="GetBillingAgreementCustomerDetailsResponseType1.datasource" t="Include" />
-              <e p="GetBoardingDetailsResponseType1.datasource" t="Include" />
-              <e p="GetExpressCheckoutDetailsResponseType1.datasource" t="Include" />
-              <e p="GetIncentiveEvaluationResponseType1.datasource" t="Include" />
-              <e p="GetMobileStatusResponseType1.datasource" t="Include" />
-              <e p="GetPalDetailsResponseType1.datasource" t="Include" />
-              <e p="GetRecurringPaymentsProfileDetailsResponseType1.datasource" t="Include" />
-              <e p="GetTransactionDetailsResponseType1.datasource" t="Include" />
-              <e p="InitiateRecoupResponseType1.datasource" t="Include" />
-              <e p="ManagePendingTransactionStatusResponseType1.datasource" t="Include" />
-              <e p="ManageRecurringPaymentsProfileStatusResponseType1.datasource" t="Include" />
-              <e p="MassPayResponseType1.datasource" t="Include" />
-              <e p="PayMarkSvc.wsdl" t="Include" />
-              <e p="Reference.cs" t="Include" />
-              <e p="Reference.map" t="Include" />
-              <e p="RefundTransactionResponseType1.datasource" t="Include" />
-              <e p="ReverseTransactionResponseType1.datasource" t="Include" />
-              <e p="SetAccessPermissionsResponseType1.datasource" t="Include" />
-              <e p="SetAuthFlowParamResponseType1.datasource" t="Include" />
-              <e p="SetCustomerBillingAgreementResponseType1.datasource" t="Include" />
-              <e p="SetExpressCheckoutResponseType1.datasource" t="Include" />
-              <e p="SetMobileCheckoutResponseType1.datasource" t="Include" />
-              <e p="TransactionSearchResponseType1.datasource" t="Include" />
-              <e p="UpdateAccessPermissionsResponseType1.datasource" t="Include" />
-              <e p="UpdateAuthorizationResponseType1.datasource" t="Include" />
-              <e p="UpdateRecurringPaymentsProfileResponseType1.datasource" t="Include" />
-            </e>
           </e>
           <e p="Web.config" t="Include" />
         </e>

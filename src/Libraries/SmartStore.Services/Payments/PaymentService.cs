@@ -148,15 +148,12 @@ namespace SmartStore.Services.Payments
 
 			if (!activeProviders.Any() && provideFallbackMethod)
 			{
-				var fallbackMethod = allProviders.FirstOrDefault(x => x.IsPaymentMethodActive(_paymentSettings));
-                if (fallbackMethod == null)
-                {
-                    fallbackMethod = allProviders.FirstOrDefault();
-                }
+				var fallbackMethod = allProviders.FirstOrDefault(x => x.IsPaymentMethodActive(_paymentSettings)) ??
+				                     allProviders.FirstOrDefault();
 
 				if (fallbackMethod != null)
 				{
-					return new Provider<IPaymentMethod>[] { fallbackMethod };
+					return new[] { fallbackMethod };
 				}
 
                 if (DataSettings.DatabaseIsInstalled())
@@ -171,22 +168,18 @@ namespace SmartStore.Services.Payments
 		public virtual Provider<IPaymentMethod> LoadPaymentMethodBySystemName(string systemName, bool onlyWhenActive = false, int storeId = 0)
         {
 			var provider = _providerManager.GetProvider<IPaymentMethod>(systemName, storeId);
-			if (provider != null)
+			if (provider == null) return provider;
+			if (onlyWhenActive && !provider.IsPaymentMethodActive(_paymentSettings))
 			{
-				if (onlyWhenActive && !provider.IsPaymentMethodActive(_paymentSettings))
-				{
-					return null;
-				}
+				return null;
+			}
 
-				if (!QuerySettings.IgnoreMultiStore && storeId > 0)
-				{
-					// Return provider if paymentMethod is null!
-					var paymentMethod = _paymentMethodRepository.TableUntracked.FirstOrDefault(x => x.PaymentMethodSystemName == systemName);
-					if (paymentMethod != null && !_storeMappingService.Authorize(paymentMethod, storeId))
-					{
-						return null;
-					}
-				}
+			if (QuerySettings.IgnoreMultiStore || storeId <= 0) return provider;
+			// Return provider if paymentMethod is null!
+			var paymentMethod = _paymentMethodRepository.TableUntracked.FirstOrDefault(x => x.PaymentMethodSystemName == systemName);
+			if (paymentMethod != null && !_storeMappingService.Authorize(paymentMethod, storeId))
+			{
+				return null;
 			}
 
 			return provider;
@@ -196,19 +189,16 @@ namespace SmartStore.Services.Payments
         {
 			var providers = _providerManager.GetAllProviders<IPaymentMethod>(storeId);
 
-			if (providers.Any() && !QuerySettings.IgnoreMultiStore && storeId > 0)
-			{
-                var paymentMethods = GetAllPaymentMethods(storeId);
+			if (!providers.Any() || QuerySettings.IgnoreMultiStore || storeId <= 0) return providers;
+			var paymentMethods = GetAllPaymentMethods(storeId);
 
-                var unauthorizedMethodNames = paymentMethods.Values
-                    .Where(x => x.LimitedToStores && !_storeMappingService.Authorize(x, storeId))
-                    .Select(x => x.PaymentMethodSystemName)
-                    .ToList();
+			var unauthorizedMethodNames = paymentMethods.Values
+				.Where(x => x.LimitedToStores && !_storeMappingService.Authorize(x, storeId))
+				.Select(x => x.PaymentMethodSystemName)
+				.ToList();
 
-				return providers.Where(x => !unauthorizedMethodNames.Contains(x.Metadata.SystemName));
-			}
+			return providers.Where(x => !unauthorizedMethodNames.Contains(x.Metadata.SystemName));
 
-			return providers;
         }
 
         public virtual IDictionary<string, PaymentMethod> GetAllPaymentMethods(int storeId = 0)
@@ -312,14 +302,12 @@ namespace SmartStore.Services.Payments
 				var result = new PreProcessPaymentResult();
 				return result;
 			}
-			else
-			{
-				var paymentMethod = LoadPaymentMethodBySystemName(processPaymentRequest.PaymentMethodSystemName);
-				if (paymentMethod == null)
-					throw new SmartException(T("Payment.CouldNotLoadMethod"));
 
-				return paymentMethod.Value.PreProcessPayment(processPaymentRequest);
-			}
+			var paymentMethod = LoadPaymentMethodBySystemName(processPaymentRequest.PaymentMethodSystemName);
+			if (paymentMethod == null)
+				throw new SmartException(T("Payment.CouldNotLoadMethod"));
+
+			return paymentMethod.Value.PreProcessPayment(processPaymentRequest);
 		}
 
         /// <summary>

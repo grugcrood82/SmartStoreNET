@@ -147,7 +147,6 @@
     <Compile Include="Providers\PayMarkItemType.cs" />
     <Compile Include="Providers\PayMarkLineItem.cs" />
     <Compile Include="Providers\PayMarkRestApiProviderBase.cs" />
-    <Compile Include="Providers\PayMarkProviderBase.cs" />
     <Compile Include="Providers\PayMarkStandardProvider.cs" />
     <Compile Include="Providers\PaymentRequestParams.cs" />
     <Compile Include="Providers\QueryHelpers.cs" />
@@ -166,11 +165,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="RouteProvider.cs" />
-    <Compile Include="Web References\PayMarkSvc\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\SmartStore.Core\SmartStore.Core.csproj">
@@ -249,45 +243,6 @@
     <Content Include="Views\Web.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Web References\PayMarkSvc\AddressVerifyResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BAUpdateResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BillOutstandingAmountResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BillUserResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BMButtonSearchResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BMCreateButtonResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BMGetButtonDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BMGetInventoryResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BMManageButtonStatusResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BMSetInventoryResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\BMUpdateButtonResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\CancelRecoupResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\CompleteRecoupResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
     <Content Include="Views\PayMarkStandard\Configure.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -297,163 +252,14 @@
     <Content Include="Views\Shared\Partials\ApiConfiguration.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Web References\PayMarkSvc\CoreComponentTypes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web References\PayMarkSvc\CreateBillingAgreementResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\CreateMobilePaymentResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\CreateRecurringPaymentsProfileResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoAuthorizationResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoCancelResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoCaptureResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoDirectPaymentResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoExpressCheckoutPaymentResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoMobileCheckoutPaymentResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoNonReferencedCreditResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoReauthorizationResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoReferenceTransactionResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoUATPAuthorizationResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoUATPExpressCheckoutPaymentResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\DoVoidResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <None Include="Web References\PayMarkSvc\eBLBaseComponents.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\PayMarkSvc\EnhancedDataTypes.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web References\PayMarkSvc\EnterBoardingResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\ExecuteCheckoutOperationsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\ExternalRememberMeOptOutResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetAccessPermissionDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetAuthDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetBalanceResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetBillingAgreementCustomerDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetBoardingDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetExpressCheckoutDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetIncentiveEvaluationResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetMobileStatusResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetPalDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetRecurringPaymentsProfileDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\GetTransactionDetailsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\InitiateRecoupResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\ManagePendingTransactionStatusResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\ManageRecurringPaymentsProfileStatusResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\MassPayResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <None Include="Web References\PayMarkSvc\PayMarkSvc.wsdl" />
-    <None Include="Web References\PayMarkSvc\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Web References\PayMarkSvc\RefundTransactionResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\ReverseTransactionResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\SetAccessPermissionsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\SetAuthFlowParamResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\SetCustomerBillingAgreementResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\SetExpressCheckoutResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\SetMobileCheckoutResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\TransactionSearchResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\UpdateAccessPermissionsResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\UpdateAuthorizationResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
     <Content Include="web.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Web References\PayMarkSvc\UpdateRecurringPaymentsProfileResponseType1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Description.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -520,5 +326,5 @@
     </ItemGroup>
     <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
     <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
-</Target>
+  </Target>
 </Project>
