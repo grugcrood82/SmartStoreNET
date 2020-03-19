@@ -177,24 +177,9 @@
         <Children>
             <LocaleResource Name="AdminInstruction">
                 <Value>
-                    <![CDATA[<p>Stellen Sie bitte sicher, dass PayMark die Primärwährung Ihres Shops unterstützt, falls Sie dieses Gateway benutzen!</p>
+                    <![CDATA[<p>FORTH COMING ATTRACTIONS::: The plug in works but needs Documentation translation. This works in new zealand only.</p>
             <ol>
-            <li>Loggen Sie sich in Ihr PayMark-Konto ein.</li>
-            <li>Klicken Sie auf den Register <b class="font-weight-medium">Mein Profil</b>.</li>
-            <li>Klicken Sie unter <b class="font-weight-medium">Verkäufer/Händler</b> auf <b class="font-weight-medium">API-Zugriff</b>.</li>
-            <li>Klicken Sie auf <b class="font-weight-medium">API-Berechtigung anfordern</b>.</li>
-            <li>Wählen Sie die Option <b class="font-weight-medium">Fordern Sie eine API-Signature an</b>.</li>
-            <li>Klicken Sie auf <b class="font-weight-medium">Zustimmen und senden</b>.</li>
-            </ol>
-            <p>Aktivieren Sie optional den PayMark-Service zum Empfang von IPN-Nachrichten (Instant Payment Notification):</p>
-            <ol>
-            <li>In Ihr Premier- oder Business-Konto einloggen.</li>
-            <li>Auf den Register <b class="font-weight-medium">Mein Profil</b> klicken.</li>
-            <li>Unter <b class="font-weight-medium">Sprach-Kodierung &gt; Weitere Einstellungen</b> wählen Sie bitte UTF-8.</li>
-            <li><b class="font-weight-medium">Sofortige Zahlungsbestätigung</b> klicken.</li>
-            <li><b class="font-weight-medium">Einstellungen für sofortige Zahlungsbestätigungen wählen</b> klicken.</li>
-            <li>Bei <b class="font-weight-medium">Benachrichtigungs-URL</b> die URL Ihres IPN-Handlers (<b class="font-weight-medium">https://www.yourStore.com/Plugins/SmartStore.PayMark/PayMarkExpress/IPNHandler</b>) eingeben.</li>
-            <li><b class="font-weight-medium">Speichern</b> klicken. Danach sollten Sie eine Nachricht über die erfolgreiche Aktivierung von IPN erhalten.</li>
+           <li>OOPs, Language is not suppoerted</li>
             </ol>]]>
                 </Value>
             </LocaleResource>

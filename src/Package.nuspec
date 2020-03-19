@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Package</id>
+    <version>1.0.0</version>
+    <authors>innocent</authors>
+    <owners>innocent</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
+    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+    <description>Package description</description>
+    <releaseNotes>Adds support for paymark New Zealand.</releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>SmartStore.net</tags>
+    <dependencies>
+      <group targetFramework=".Dotnet 4.6.2">
+      </group>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,5 +1,5 @@
 ﻿FriendlyName: PayMark
-Description: Provides the PayMark payment methods PayMark Standard, PayMark Direct, PayMark Express and PayMark PLUS.
+Description: Provides the PayMark Hosted Payment method.
 SystemName: SmartStore.PayMark
 Group: Payment
 Version: 3.2.2
